@@ -2181,6 +2181,7 @@
 (function(){
   'use strict';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.innerWidth <= 900;
 
   const Preloader = {
     init(){
@@ -2251,10 +2252,30 @@
 
   const ScrollReveal = {
     init(){
+      /* Mobile par gallery projects hamesha visible */
+      if(isMobile){
+        document.querySelectorAll('#gallery .reveal, #gallery .tilt-card').forEach(el=>{
+          el.classList.add('in');
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+          el.style.transform = 'none';
+        });
+      }
+
       const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
       }, {threshold:0.12});
-      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+      document.querySelectorAll('.reveal').forEach(el=>{
+        if(!isMobile || !el.closest('#gallery')){
+          io.observe(el);
+        }
+      });
     }
   };
 
