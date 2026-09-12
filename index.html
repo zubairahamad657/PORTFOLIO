@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <title>Juber Ahamad — Web & Graphic Designer | Mumbai</title>
 <meta name="description" content="Juber Ahamad is a Mumbai-based web designer, front-end developer and graphic designer building responsive websites and premium brand visuals.">
 <meta name="keywords" content="web designer Mumbai, front-end developer, graphic designer, freelance web designer India, CorelDRAW, Illustrator, Photoshop designer">
@@ -1073,11 +1073,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .plate-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .web-card {
@@ -1220,6 +1224,29 @@
 
   .no-results.show { display: block; }
 
+  .tilt-card {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tilt-card .plate {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .wide-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wide-wrap .plate.wide {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1.15;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .plate {
     position: relative;
     border-radius: 20px;
@@ -1229,6 +1256,8 @@
     background: var(--bg-primary);
     transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
     cursor: pointer;
+    width: 100%;
+    max-width: 100%;
   }
 
   .plate:hover {
@@ -1660,6 +1689,71 @@
     * { animation: none !important; transition: none !important; }
     .reveal { opacity: 1; transform: none; }
     .plate, .web-card { transform: none !important; }
+  }
+
+  /* ==========================================
+     MOBILE FIT FIX — IMAGES PROPERLY FIT
+     ========================================== */
+
+  @media (max-width: 900px) {
+    
+    #gallery {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: visible !important;
+    }
+
+    #gallery .tilt-card,
+    #gallery .tilt-card.reveal,
+    #gallery .wide-wrap {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    #gallery .plate {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
+    }
+
+    #gallery .plate img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+
+    #gallery .plate.wide {
+      aspect-ratio: 16 / 9 !important;
+    }
+  }
+
+  @media (max-width: 560px) {
+    
+    #gallery {
+      grid-template-columns: 1fr !important;
+    }
+
+    #gallery .tilt-card,
+    #gallery .wide-wrap {
+      grid-column: span 1 !important;
+      width: 100% !important;
+    }
+
+    #gallery .plate {
+      aspect-ratio: 1 / 1 !important;
+    }
+
+    #gallery .plate.wide {
+      aspect-ratio: 1 / 1 !important;
+    }
+
+    #gallery .plate img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
   }
 </style>
 </head>
@@ -2182,6 +2276,7 @@
   'use strict';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = window.innerWidth <= 900;
+  const isSmallMobile = window.innerWidth <= 560;
 
   const Preloader = {
     init(){
@@ -2252,7 +2347,6 @@
 
   const ScrollReveal = {
     init(){
-      /* Mobile par gallery projects hamesha visible */
       if(isMobile){
         document.querySelectorAll('#gallery .reveal, #gallery .tilt-card').forEach(el=>{
           el.classList.add('in');
