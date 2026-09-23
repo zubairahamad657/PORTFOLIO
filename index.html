@@ -223,7 +223,7 @@
 
   .navlinks {
     display: flex;
-    gap: 48px;
+    gap: 40px;
     font-family: var(--font-mono);
     font-size: 0.82rem;
     letter-spacing: 0.08em;
@@ -1412,6 +1412,141 @@
     .lightbox-details { max-width: 90vw; }
   }
 
+  /* ========== CERTIFICATES SECTION ========== */
+  .certificates {
+    padding: 140px 0;
+    position: relative;
+  }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .cert-card {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .cert-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(245, 158, 11, 0.08));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    color: var(--accent-light);
+    font-size: 1.6rem;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+  }
+
+  .cert-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  .cert-card .cert-issuer {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .cert-preview {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4 / 3;
+    background: var(--bg-primary);
+    margin-bottom: 22px;
+    cursor: pointer;
+    transition: all 0.4s var(--ease-out);
+  }
+
+  .cert-preview:hover {
+    border-color: rgba(245, 158, 11, 0.45);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .cert-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.6s var(--ease-out);
+  }
+
+  .cert-preview:hover img {
+    transform: scale(1.05);
+  }
+
+  .cert-preview .cert-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11, 15, 25, 0.92) 0%, transparent 55%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s var(--ease-out);
+  }
+
+  .cert-preview:hover .cert-overlay {
+    opacity: 1;
+  }
+
+  .cert-preview .cert-overlay span {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent-light);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .cert-card > p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    flex: 1;
+  }
+
+  .cert-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .cert-meta .cert-score {
+    color: var(--accent-light);
+    font-weight: 700;
+    font-size: 1rem;
+    text-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
+  }
+
   /* ========== CONTACT SECTION ========== */
   .contact { padding: 140px 0; }
 
@@ -1673,6 +1808,7 @@
     .stat-num { font-size: 2.2rem; }
     .filter-row { flex-direction: column; align-items: stretch; }
     .wrap { padding: 0 32px; }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   }
 
   @media (max-width: 560px) {
@@ -1687,6 +1823,7 @@
     .plate.wide { grid-column: span 1; aspect-ratio: 1 / 1; }
     .lightbox-inner { flex-direction: column; padding: 20px; }
     .lightbox img, .lightbox-details { max-width: 100%; }
+    .cert-grid { grid-template-columns: 1fr; gap: 20px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1778,6 +1915,7 @@
       <li><a href="#skills" data-nav="skills">Skills</a></li>
       <li><a href="#services" data-nav="services">Services</a></li>
       <li><a href="#work" data-nav="work">Work</a></li>
+      <li><a href="#certificates" data-nav="certificates">Certificates</a></li>
       <li><a href="#contact" data-nav="contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -1806,6 +1944,7 @@
   <a href="#skills" data-nav="skills">Skills</a>
   <a href="#services" data-nav="services">Services</a>
   <a href="#work" data-nav="work">Work</a>
+  <a href="#certificates" data-nav="certificates">Certificates</a>
   <a href="#contact" data-nav="contact">Contact</a>
 </nav>
 
@@ -2152,6 +2291,12 @@
         </div>
       </div>
       <div class="tilt-card reveal">
+        <div class="plate" data-cat="ad" data-full="images/Air_force.jpeg" data-title="Air Force" data-desc="Military-themed design." data-tags="Ad Creative">
+          <img src="images/Air_force.jpeg" alt="Air Force" loading="lazy">
+          <div class="g-overlay"><div class="g-cat">Ad Creative</div><h5>Air Force</h5></div>
+        </div>
+      </div>
+      <div class="tilt-card reveal">
         <div class="plate" data-cat="ad" data-full="images/RETRO.png" data-title="RETRO" data-desc="Retro style design." data-tags="Ad Creative">
           <img src="images/RETRO.png" alt="RETRO" loading="lazy">
           <div class="g-overlay"><div class="g-cat">Ad Creative</div><h5>RETRO</h5></div>
@@ -2182,14 +2327,12 @@
         </div>
       </div>
 
-      <!-- ========== NAYE 4 PROJECTS START ========== -->
       <div class="tilt-card reveal">
         <div class="plate" data-cat="ad" data-full="images/cup-cake.jpg" data-title="Cupcake Ad" data-desc="Delicious red velvet cupcake ad creative with bold typography and a rich red backdrop." data-tags="Ad Creative, Food">
           <img src="images/cup-cake.jpg" alt="Cupcake ad creative" loading="lazy">
           <div class="g-overlay"><div class="g-cat">Ad Creative</div><h5>Cupcake Ad</h5></div>
         </div>
       </div>
-           <!-- ========== NAYE PROJECTS START ========== -->
       <div class="tilt-card reveal">
         <div class="plate" data-cat="ad" data-full="images/SOFAA.jpg" data-title="Sofa Promo Ad" data-desc="Modern sofa advertisement with a bold 50% OFF offer and clean split-color layout." data-tags="Ad Creative, Furniture">
           <img src="images/SOFAA.jpg" alt="Sofa promo ad" loading="lazy">
@@ -2202,7 +2345,6 @@
           <div class="g-overlay"><div class="g-cat">Ad Creative</div><h5>Irbean's Coffee</h5></div>
         </div>
       </div>
-      <!-- ========== NAYE PROJECTS END ========== -->
       <div class="tilt-card reveal">
         <div class="plate" data-cat="ad" data-full="images/cuaiz.jpg" data-title="Cuaiz Furniture" data-desc="Modern furniture poster design with elegant typography and a wooden chair product shot." data-tags="Ad Creative, Branding">
           <img src="images/cuaiz.jpg" alt="Cuaiz Furniture poster" loading="lazy">
@@ -2215,10 +2357,68 @@
           <div class="g-overlay"><div class="g-cat">Ad Creative</div><h5>Nike Dunk</h5></div>
         </div>
       </div>
-      
-      <!-- ========== NAYE 5 PROJECTS END ========== -->
 
       <div class="no-results" id="noResults">No projects match your search. Try another keyword or filter.</div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES SECTION ========== -->
+  <section class="certificates wrap reveal" id="certificates">
+    <div class="sec-head">
+      <div class="sec-tag">Certificates</div>
+      <h2 class="sec-title">Verified Credentials</h2>
+      <p class="sec-sub">Certified courses completed from DISHA Computer Institute — an ISO 9001:2015 certified institute.</p>
+    </div>
+    <div class="cert-grid">
+
+      <!-- Certificate 1: Graphic Designing -->
+      <div class="cert-card glass-card reveal">
+        <div class="cert-badge">🎨</div>
+        <h4>Certificate Course in Graphic Designing</h4>
+        <div class="cert-issuer">DISHA Computer Institute</div>
+        <div class="cert-preview" data-full="images/Juber_Ahamad_Graphic_Design_Certificate.png" data-title="Certificate Course in Graphic Designing" data-desc="Successfully passed the Certificate Course in Graphic Designing from DISHA Computer Institute with 98.33%. Marks: Photoshop 100/100, CorelDRAW 95/100, Illustrator 100/100. Issued: Sep 08, 2026. Sr. No. 50779.">
+          <img src="images/Juber_Ahamad_Graphic_Design_Certificate.png" alt="Graphic Designing Certificate — Juber Ahamad" loading="lazy">
+          <div class="cert-overlay"><span>Click to View</span></div>
+        </div>
+        <p>Completed comprehensive training in graphic design covering Photoshop, CorelDRAW, and Adobe Illustrator with an outstanding 98.33% score.</p>
+        <div class="cert-meta">
+          <span>Issued: Sep 08, 2026</span>
+          <span class="cert-score">98.33%</span>
+        </div>
+      </div>
+
+      <!-- Certificate 2: Web Designing -->
+      <div class="cert-card glass-card reveal">
+        <div class="cert-badge">💻</div>
+        <h4>Certificate Course in Web Designing</h4>
+        <div class="cert-issuer">DISHA Computer Institute</div>
+        <div class="cert-preview" data-full="images/Juber_Ahamad_Web_Design_Certificate.png" data-title="Certificate Course in Web Designing" data-desc="Successfully passed the Certificate Course in Web Designing from DISHA Computer Institute with 90.00%. Marks: HTML 75/100, JavaScript 100/100, CSS 95/100. Issued: Sep 16, 2026. Sr. No. 51774.">
+          <img src="images/Juber_Ahamad_Web_Design_Certificate.png" alt="Web Designing Certificate — Juber Ahamad" loading="lazy">
+          <div class="cert-overlay"><span>Click to View</span></div>
+        </div>
+        <p>Completed professional training in web design covering HTML, CSS, and JavaScript with a strong 90.00% score.</p>
+        <div class="cert-meta">
+          <span>Issued: Sep 16, 2026</span>
+          <span class="cert-score">90.00%</span>
+        </div>
+      </div>
+
+      <!-- Certificate 3: Diploma in Information Technology -->
+      <div class="cert-card glass-card reveal">
+        <div class="cert-badge">🎓</div>
+        <h4>Diploma Course in Information Technology</h4>
+        <div class="cert-issuer">DISHA Computer Institute</div>
+        <div class="cert-preview" data-full="images/Juber_Ahamad_IT_Diploma_Certificate.jpg" data-title="Diploma Course in Information Technology" data-desc="Successfully passed the Diploma Course in Information Technology from DISHA Computer Institute with 77.50%. Marks: C 45/100, C++ 90/100, MS Excel 60/100, MS Word 90/100, MS PowerPoint 85/100, Python 95/100. Issued: Jul 22, 2026. Sr. No. 43736.">
+          <img src="images/Juber_Ahamad_IT_Diploma_Certificate.jpg" alt="Diploma in Information Technology — Juber Ahamad" loading="lazy">
+          <div class="cert-overlay"><span>Click to View</span></div>
+        </div>
+        <p>Completed a comprehensive diploma covering C, C++, MS Office suite (Word, Excel, PowerPoint), and Python programming with a solid 77.50% score.</p>
+        <div class="cert-meta">
+          <span>Issued: Jul 22, 2026</span>
+          <span class="cert-score">77.50%</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -2319,7 +2519,6 @@
   'use strict';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = window.innerWidth <= 900;
-  const isSmallMobile = window.innerWidth <= 560;
 
   const Preloader = {
     init(){
@@ -2458,7 +2657,7 @@
     init(){
       this.header = document.getElementById('siteHeader');
       this.lastY = window.scrollY;
-      this.sections = ['about','skills','services','work','contact'].map(id=> document.getElementById(id)).filter(Boolean);
+      this.sections = ['about','skills','services','work','certificates','contact'].map(id=> document.getElementById(id)).filter(Boolean);
       this.links = document.querySelectorAll('[data-nav]');
       window.addEventListener('scroll', ()=> this.onScroll(), {passive:true});
       this.onScroll();
@@ -2542,19 +2741,24 @@
       this.title = document.getElementById('lbTitle');
       this.desc = document.getElementById('lbDesc');
       this.tags = document.getElementById('lbTags');
-      document.querySelectorAll('.plate').forEach(p=>{
+      document.querySelectorAll('.plate, .cert-preview').forEach(p=>{
         p.addEventListener('click', ()=> this.open(p));
       });
       document.getElementById('lightboxClose').addEventListener('click', ()=> this.close());
       this.box.addEventListener('click', (e)=>{ if(e.target===this.box) this.close(); });
       document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') this.close(); });
     },
-    open(plate){
-      this.img.src = plate.dataset.full;
-      this.cat.textContent = plate.querySelector('.g-cat')?.textContent || plate.dataset.cat;
-      this.title.textContent = plate.dataset.title || '';
-      this.desc.textContent = plate.dataset.desc || '';
-      this.tags.innerHTML = (plate.dataset.tags || '').split(',').map(t=> `<span>${t.trim()}</span>`).join('');
+    open(el){
+      const isCert = el.classList.contains('cert-preview');
+      this.img.src = el.dataset.full;
+      this.img.alt = el.dataset.title || 'Preview';
+      this.img.style.maxWidth = isCert ? 'min(600px, 55vw)' : '';
+      this.cat.textContent = isCert ? 'Certificate' : (el.querySelector('.g-cat')?.textContent || el.dataset.cat);
+      this.title.textContent = el.dataset.title || '';
+      this.desc.textContent = el.dataset.desc || '';
+      this.tags.innerHTML = isCert
+        ? '<span>DISHA Institute</span><span>ISO 9001:2015</span><span>Verified</span>'
+        : (el.dataset.tags || '').split(',').map(t=> `<span>${t.trim()}</span>`).join('');
       this.box.classList.add('active');
     },
     close(){ this.box.classList.remove('active'); }
