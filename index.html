@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<title>Juber Ahamad — Web & Graphic Designer | Mumbai</title>
-<meta name="description" content="Juber Ahamad is a Mumbai-based web designer, front-end developer and graphic designer building responsive websites and premium brand visuals.">
-<meta name="keywords" content="web designer Mumbai, front-end developer, graphic designer, freelance web designer India, CorelDRAW, Illustrator, Photoshop designer">
+<title>Juber Ahamad — Graphic Designer | Web Designer | Mumbai</title>
+<meta name="description" content="Juber Ahamad is a Mumbai-based graphic designer specializing in branding, packaging and ad creatives — also building responsive websites with HTML, CSS and JavaScript.">
+<meta name="keywords" content="graphic designer Mumbai, branding designer, packaging designer, ad creative designer, CorelDRAW designer, Illustrator designer, Photoshop designer, web designer India">
 <meta name="author" content="Juber Ahamad">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://zubairahamad657.github.io/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Juber Ahamad — Web & Graphic Designer">
-<meta property="og:description" content="Mumbai-based web designer & graphic designer. Responsive websites, branding, packaging and ad creatives.">
+<meta property="og:title" content="Juber Ahamad — Graphic Designer & Web Designer">
+<meta property="og:description" content="Mumbai-based graphic designer — branding, packaging, ad creatives. Also building responsive websites.">
 <meta property="og:image" content="images/product advertising.png">
 <meta property="og:url" content="https://zubairahamad657.github.io/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Juber Ahamad — Web & Graphic Designer">
-<meta name="twitter:description" content="Mumbai-based web designer & graphic designer building responsive sites and premium brand visuals.">
+<meta name="twitter:title" content="Juber Ahamad — Graphic Designer & Web Designer">
+<meta name="twitter:description" content="Mumbai-based graphic designer — branding, packaging, ad creatives. Also building responsive websites.">
 <meta name="twitter:image" content="images/product advertising.png">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230B0F19'/%3E%3Ctext x='50' y='66' font-size='56' text-anchor='middle' fill='%23F59E0B' font-family='monospace'%3EZ%3C/text%3E%3C/svg%3E">
@@ -29,7 +29,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Juber Ahamad",
-  "jobTitle": "Web Designer & Graphic Designer",
+  "jobTitle": "Graphic Designer & Web Designer",
   "url": "https://zubairahamad657.github.io/",
   "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" },
   "sameAs": [
@@ -220,9 +220,9 @@
 
   .navlinks {
     display: flex;
-    gap: 40px;
+    gap: 32px;
     font-family: var(--font-mono);
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     letter-spacing: 0.08em;
     color: var(--text-muted);
   }
@@ -877,6 +877,27 @@
 
   .skill-group { padding: 34px; }
 
+  .skill-group.primary-skill {
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.08), var(--shadow-lg);
+    position: relative;
+  }
+
+  .skill-group.primary-skill::before {
+    content: 'PRIMARY';
+    position: absolute;
+    top: -10px;
+    right: 24px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--bg-primary);
+    background: var(--accent);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: 700;
+  }
+
   .skill-group h4 {
     font-family: var(--font-mono);
     font-size: 0.82rem;
@@ -981,6 +1002,28 @@
     overflow: hidden;
   }
 
+  .service-item.primary-service {
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.08), var(--shadow-lg);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.06), rgba(245, 158, 11, 0.02)), var(--glass-bg);
+  }
+
+  .service-item.primary-service::before {
+    content: 'PRIMARY';
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    color: var(--bg-primary);
+    background: var(--accent);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: 700;
+    z-index: 2;
+  }
+
   .service-item::before {
     content: '';
     position: absolute;
@@ -993,20 +1036,24 @@
 
   .service-item:hover::before { border-color: rgba(245, 158, 11, 0.5); }
 
-  .service-item::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.5s;
+  .service-item.primary-service::before {
+    content: 'PRIMARY';
+    border: none;
+    inset: auto;
+    top: 16px;
+    right: 20px;
+    color: var(--bg-primary);
+    background: var(--accent);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
     pointer-events: none;
+    transition: none;
+    z-index: 2;
   }
-
-  .service-item:hover::after { opacity: 1; }
 
   .service-num {
     font-family: var(--font-mono);
@@ -1070,6 +1117,11 @@
   }
 
   .subsec-label:first-of-type { margin-top: 0; }
+
+  .subsec-label.primary-label {
+    color: var(--accent-light);
+    font-size: 0.9rem;
+  }
 
   .web-grid, .plate-grid {
     display: grid;
@@ -1422,6 +1474,22 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+  }
+
+  .cert-card.primary-cert {
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.08), var(--shadow-lg);
+    position: relative;
+  }
+
+  .cert-card.primary-cert::before {
+    content: '★';
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 1rem;
+    color: var(--accent);
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
   }
 
   .cert-badge {
@@ -1797,33 +1865,18 @@
     .navlinks, .nav-social { display: none; }
     #hamburger { display: flex; }
 
-    /* HEADER compact */
     nav { padding: 16px 24px; }
     .logo { font-size: 1.2rem; line-height: 1.15; }
     .logo .tag { font-size: 0.58rem; margin-top: 3px; letter-spacing: 0.14em; }
     #themeToggle, #hamburger { width: 40px; height: 40px; }
 
-    /* ---- HERO FIX (main issue) ---- */
-    .hero {
-      padding: 180px 0 90px !important;
-      min-height: auto !important;
-    }
+    .hero { padding: 180px 0 90px !important; min-height: auto !important; }
     .hero-content { padding-top: 0; }
     .hero-badge { margin-bottom: 22px; padding: 9px 18px; }
     .hero-badge span { font-size: 0.68rem; }
-    .hero h1 {
-      font-size: clamp(2rem, 6.5vw, 3rem);
-      line-height: 1.18;
-      margin-bottom: 22px;
-    }
+    .hero h1 { font-size: clamp(2rem, 6.5vw, 3rem); line-height: 1.18; margin-bottom: 22px; }
     .hero h1 .highlight::after { height: 8px; bottom: 4px; }
-    .role-line {
-      flex-wrap: wrap;
-      gap: 6px 10px;
-      font-size: 1rem;
-      margin-bottom: 26px;
-      min-height: auto;
-    }
+    .role-line { flex-wrap: wrap; gap: 6px 10px; font-size: 1rem; margin-bottom: 26px; min-height: auto; }
     .role-line .text { min-width: unset; }
     .hero-sub { font-size: 1.05rem; margin-bottom: 34px; }
     .hero-cta { gap: 14px; margin-bottom: 52px; }
@@ -1831,7 +1884,6 @@
     .stat-num { font-size: 2.2rem; }
     .scroll-indicator { display: none; }
 
-    /* sections */
     .about, .skills, .services, .projects, .certificates, .contact { padding: 90px 0; }
     .sec-head { margin-bottom: 48px; }
 
@@ -1844,40 +1896,20 @@
 
     .wrap { padding: 0 24px; }
 
-    /* Lightbox */
     .lightbox-inner { flex-direction: column; gap: 20px; }
     .lightbox img { max-width: 92vw; max-height: 65vh; }
     .lightbox-details { max-width: 92vw; }
 
-    /* Gallery mobile fit */
-    #gallery {
-      width: 100% !important;
-      max-width: 100% !important;
-      overflow: visible !important;
-    }
+    #gallery { width: 100% !important; max-width: 100% !important; overflow: visible !important; }
     #gallery .tilt-card,
     #gallery .tilt-card.reveal,
-    #gallery .wide-wrap {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-    }
-    #gallery .plate {
-      width: 100% !important;
-      max-width: 100% !important;
-      overflow: hidden !important;
-    }
-    #gallery .plate img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      display: block !important;
-    }
+    #gallery .wide-wrap { width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+    #gallery .plate { width: 100% !important; max-width: 100% !important; overflow: hidden !important; }
+    #gallery .plate img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
     #gallery .plate.wide { aspect-ratio: 16 / 9 !important; }
 
     body { overflow-x: hidden; }
 
-    /* Always visible overlays for touch devices */
     .plate .g-overlay {
       opacity: 1;
       background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 0%, rgba(11, 15, 25, 0.15) 60%, transparent 100%);
@@ -1886,10 +1918,9 @@
   }
 
   /* ==========================================
-     MOBILE (≤560px) — PAKKA FIX
+     MOBILE (≤560px)
      ========================================== */
   @media (max-width: 560px) {
-    /* HEADER — minimal, so hero gets max space */
     nav { padding: 12px 16px; }
     .logo { font-size: 1rem; line-height: 1.15; }
     .logo .tag { font-size: 0.52rem; margin-top: 2px; letter-spacing: 0.12em; }
@@ -1897,167 +1928,88 @@
     #themeToggle { font-size: 0.95rem; }
     #hamburger span { width: 17px; }
 
-    /* ---- HERO — FINAL FIX ---- */
-    .hero {
-      padding: 150px 0 70px !important;
-      min-height: auto !important;
-      display: block !important;
-    }
+    .hero { padding: 150px 0 70px !important; min-height: auto !important; display: block !important; }
     .hero-content { padding-top: 0; max-width: 100%; }
-
-    .hero-badge {
-      margin-bottom: 18px;
-      padding: 7px 14px;
-    }
+    .hero-badge { margin-bottom: 18px; padding: 7px 14px; }
     .hero-badge span { font-size: 0.62rem; letter-spacing: 0.1em; }
     .hero-badge .dot { width: 8px; height: 8px; }
-
-    .hero h1 {
-      font-size: clamp(1.75rem, 8vw, 2.4rem);
-      line-height: 1.22;
-      margin: 0 0 18px 0;
-      letter-spacing: -0.015em;
-      overflow-wrap: break-word;
-    }
+    .hero h1 { font-size: clamp(1.75rem, 8vw, 2.4rem); line-height: 1.22; margin: 0 0 18px 0; letter-spacing: -0.015em; overflow-wrap: break-word; }
     .hero h1 .highlight::after { height: 6px; bottom: 3px; }
-
-    /* Role line — inline flow, no wrap break */
-    .role-line {
-      display: block;
-      font-size: 0.92rem;
-      line-height: 1.7;
-      margin-bottom: 22px;
-      min-height: auto;
-      color: var(--text-muted);
-    }
+    .role-line { display: block; font-size: 0.92rem; line-height: 1.7; margin-bottom: 22px; min-height: auto; color: var(--text-muted); }
     .role-line > span:first-child { display: inline; }
-    .role-line .text {
-      display: inline;
-      min-width: 0;
-      color: var(--accent-light);
-      font-weight: 500;
-    }
-    .role-line .cursor {
-      display: inline-block;
-      vertical-align: middle;
-      width: 2px;
-      height: 0.95em;
-      margin-left: 1px;
-      background: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 0.96rem;
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .hero-cta {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 12px;
-      margin-bottom: 42px;
-    }
+    .role-line .text { display: inline; min-width: 0; color: var(--accent-light); font-weight: 500; }
+    .role-line .cursor { display: inline-block; vertical-align: middle; width: 2px; height: 0.95em; margin-left: 1px; background: var(--accent); }
+    .hero-sub { font-size: 0.96rem; line-height: 1.7; margin-bottom: 28px; }
+    .hero-cta { flex-direction: column; align-items: stretch; gap: 12px; margin-bottom: 42px; }
     .btn { padding: 15px 24px; font-size: 0.76rem; justify-content: center; }
-
-    .hero-stats {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding-top: 28px;
-    }
+    .hero-stats { grid-template-columns: 1fr; gap: 20px; padding-top: 28px; }
     .stat-num { font-size: 2.2rem; }
     .stat-label { font-size: 0.68rem; margin-top: 10px; }
 
     .wrap { padding: 0 16px; }
 
-    /* Sections */
     .about, .skills, .services, .projects, .certificates, .contact { padding: 80px 0; }
     .sec-head { margin-bottom: 42px; }
     .sec-title { font-size: 1.8rem; }
     .sec-sub { font-size: 0.95rem; }
     .sec-tag { font-size: 0.66rem; padding: 8px 18px; }
 
-    /* About */
     .about-image .glass-card { padding: 30px 22px; }
     .card-name { font-size: 1.7rem; }
     .about-content h2 { font-size: 1.7rem; }
     .about-copy p { font-size: 0.98rem; }
     .goal-strip { padding: 20px 22px; }
 
-    /* Skills */
     .skill-group { padding: 26px 22px; }
     .pill { font-size: 0.78rem; padding: 8px 14px; }
 
-    /* Services */
     .service-item { padding: 30px 24px; }
 
-    /* Web grid */
     .web-card { padding: 26px 22px; }
     .web-card h4 { font-size: 1.2rem; }
 
-    /* Gallery */
     .plate-grid { grid-template-columns: 1fr; gap: 14px; }
     .plate.wide { grid-column: span 1; aspect-ratio: 1 / 1; }
 
     #gallery { grid-template-columns: 1fr !important; }
     #gallery .tilt-card,
-    #gallery .wide-wrap {
-      grid-column: span 1 !important;
-      width: 100% !important;
-    }
+    #gallery .wide-wrap { grid-column: span 1 !important; width: 100% !important; }
     #gallery .plate { aspect-ratio: 1 / 1 !important; }
     #gallery .plate.wide { aspect-ratio: 1 / 1 !important; }
-    #gallery .plate img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-    }
+    #gallery .plate img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
 
     .plate .g-overlay { padding: 16px; }
     .g-overlay h5 { font-size: 0.98rem; }
     .g-overlay .g-cat { font-size: 0.62rem; margin-bottom: 6px; }
 
-    /* Filter */
     .filter-btn { padding: 8px 16px; font-size: 0.72rem; }
     .gallery-search { min-width: 100%; padding: 9px 16px; }
 
-    /* Certificates */
     .cert-grid { grid-template-columns: 1fr; gap: 18px; }
     .cert-card { padding: 24px 20px; }
     .cert-card h4 { font-size: 1.05rem; }
     .cert-badge { width: 48px; height: 48px; font-size: 1.3rem; }
 
-    /* Contact */
     .contact-info li a,
     .contact-info li .val { font-size: 1rem; }
     .copy-btn { position: static; align-self: flex-start; margin-top: 10px; }
     .social-strip a { padding: 10px 16px; font-size: 0.74rem; }
     .send-card { padding: 26px 20px; }
 
-    /* Lightbox */
     .lightbox { padding: 14px; }
     .lightbox-inner { flex-direction: column; padding: 0; gap: 16px; }
     .lightbox img { max-width: 100%; max-height: 52vh; }
     .lightbox-details { max-width: 100%; padding: 22px; }
     .lightbox-details h3 { font-size: 1.15rem; }
-    .lightbox-close {
-      top: 12px;
-      right: 12px;
-      width: 42px;
-      height: 42px;
-      font-size: 1.4rem;
-    }
+    .lightbox-close { top: 12px; right: 12px; width: 42px; height: 42px; font-size: 1.4rem; }
 
-    /* Footer */
     footer { padding: 32px 0 90px; }
     .foot-row { flex-direction: column; text-align: center; gap: 14px; font-size: 0.72rem; }
     .foot-social { gap: 16px; }
 
-    /* Back to top */
     #backToTop { bottom: 18px; right: 18px; width: 46px; height: 46px; font-size: 1.15rem; }
   }
 
-  /* Extra small devices */
   @media (max-width: 380px) {
     .hero { padding: 140px 0 60px !important; }
     .hero h1 { font-size: 1.7rem; }
@@ -2084,7 +2036,7 @@
 
 <header id="siteHeader">
   <nav>
-    <div class="logo">JUBER AHAMAD<span class="tag">Web & Graphic Designer</span></div>
+    <div class="logo">JUBER AHAMAD<span class="tag">Graphic Designer</span></div>
     <ul class="navlinks" id="navlinks">
       <li><a href="#about" data-nav="about">About</a></li>
       <li><a href="#skills" data-nav="skills">Skills</a></li>
@@ -2124,34 +2076,35 @@
 </nav>
 
 <main id="main-content">
+  <!-- ========== HERO ========== -->
   <section class="hero wrap">
     <div class="hero-content">
       <div class="hero-badge reveal">
         <span class="dot"></span>
         <span>Available for Freelance</span>
       </div>
-      <h1 class="reveal">Designing & building the <span class="highlight">web</span>, precisely.</h1>
+      <h1 class="reveal">Designing <span class="highlight">brands</span>, one pixel at a time.</h1>
       <div class="role-line reveal">
         <span>I'm a </span><span class="text" id="roleText"></span><span class="cursor"></span>
       </div>
       <p class="hero-sub reveal">
-        <b>Juber Ahamad</b> — Web Designer, Front-End Developer & Graphic Designer from Mumbai. I build responsive websites and design brand visuals with CorelDRAW, Illustrator, and Photoshop.
+        <b>Juber Ahamad</b> — Graphic Designer from Mumbai, crafting brand identities, packaging, and ad creatives with CorelDRAW, Illustrator, and Photoshop. I also build responsive websites with HTML, CSS, and JavaScript.
       </p>
       <div class="hero-cta reveal">
         <a href="#work" class="btn btn-primary">
-          View Work
+          View Design Work
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
       <div class="hero-stats reveal">
         <div class="stat-item">
-          <span class="stat-num" data-count="10">0</span>
-          <span class="stat-label">Websites Built</span>
+          <span class="stat-num" data-count="50" data-suffix="+">0</span>
+          <span class="stat-label">Designs Created</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num" data-count="50" data-suffix="+">0</span>
-          <span class="stat-label">Graphics Designed</span>
+          <span class="stat-num" data-count="10">0</span>
+          <span class="stat-label">Websites Built</span>
         </div>
         <div class="stat-item">
           <span class="stat-num" data-count="5">0</span>
@@ -2165,6 +2118,7 @@
     </div>
   </section>
 
+  <!-- ========== ABOUT ========== -->
   <section class="about wrap reveal" id="about">
     <div class="about-grid">
       <div class="about-image">
@@ -2173,63 +2127,43 @@
           <div class="corner br"></div>
           <div class="card-label">Profile</div>
           <div class="card-name">Juber Ahamad</div>
-          <div class="card-role">Web Designer / Front-End Developer / Graphic Designer</div>
+          <div class="card-role">Graphic Designer / Brand Visual Creator / Front-End Developer</div>
           <ul class="spec-list">
             <li><span>Location</span><span>Mumbai, Maharashtra</span></li>
             <li><span>Languages</span><span>Hindi, English</span></li>
-            <li><span>Focus</span><span>Web + Graphic Design</span></li>
+            <li><span>Primary</span><span>Graphic Design</span></li>
+            <li><span>Secondary</span><span>Web Development</span></li>
             <li><span>Availability</span><span>Freelance projects</span></li>
           </ul>
         </div>
       </div>
       <div class="about-content">
         <div class="sec-tag">About</div>
-        <h2>Built for the details.</h2>
+        <h2>Design-first, detail-obsessed.</h2>
         <div class="about-copy">
-          <p>I'm a <b>beginner web designer and front-end developer</b> from Mumbai, focused on building modern, responsive, and user-friendly websites for businesses and personal brands.</p>
-          <p>Alongside development, I design graphics using <b>CorelDRAW, Adobe Illustrator, and Photoshop</b> — from branding and packaging to ad creatives and social posts.</p>
-          <p>I'm continuously learning new technologies and refining my process to deliver high-quality work on every project.</p>
+          <p>I'm a <b>graphic designer from Mumbai</b>, specializing in brand identities, packaging design, ad creatives, and social media visuals. I work primarily with <b>CorelDRAW, Adobe Illustrator, and Photoshop</b> to craft visuals that stand out.</p>
+          <p>Alongside design, I also build <b>responsive websites</b> with HTML, CSS, and JavaScript — so brands I work with can get a complete visual and digital presence.</p>
+          <p>I'm continuously refining my craft and learning new design trends to deliver high-quality work on every project.</p>
         </div>
         <div class="goal-strip">
           <div class="lab">Goal</div>
-          <p>To become a professional freelance web designer and help businesses build a strong online presence with modern, responsive websites.</p>
+          <p>To become a professional freelance graphic designer and help brands build a strong visual identity — from logo to packaging to ads — with a supporting web presence.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ========== SKILLS ========== -->
   <section class="skills wrap reveal" id="skills">
     <div class="sec-head">
       <div class="sec-tag">Skills</div>
       <h2 class="sec-title">What I work with</h2>
-      <p class="sec-sub">Tools and technologies I use to bring ideas to life</p>
+      <p class="sec-sub">Design tools I use daily, and web technologies I build with</p>
     </div>
     <div class="skill-groups">
-      <div class="skill-group glass-card">
-        <h4>Web Development</h4>
-        <div class="pill-row">
-          <span class="pill">HTML5</span>
-          <span class="pill">CSS3</span>
-          <span class="pill learning">JavaScript</span>
-          <span class="pill">Responsive Design</span>
-        </div>
-        <div class="bar-list">
-          <div class="bar-item">
-            <div class="bar-top"><span>HTML5</span><span>90%</span></div>
-            <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-top"><span>CSS3</span><span>85%</span></div>
-            <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-top"><span>JavaScript</span><span>55%</span></div>
-            <div class="bar-track"><div class="bar-fill" data-width="55"></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="skill-group glass-card">
-        <h4>Graphic Design</h4>
+      <!-- PRIMARY: Graphic Design -->
+      <div class="skill-group glass-card primary-skill">
+        <h4>Graphic Design · Primary</h4>
         <div class="pill-row">
           <span class="pill">CorelDRAW</span>
           <span class="pill">Adobe Illustrator</span>
@@ -2260,6 +2194,31 @@
           </div>
         </div>
       </div>
+      <!-- SECONDARY: Web Development -->
+      <div class="skill-group glass-card">
+        <h4>Web Development</h4>
+        <div class="pill-row">
+          <span class="pill">HTML5</span>
+          <span class="pill">CSS3</span>
+          <span class="pill learning">JavaScript</span>
+          <span class="pill">Responsive Design</span>
+        </div>
+        <div class="bar-list">
+          <div class="bar-item">
+            <div class="bar-top"><span>HTML5</span><span>90%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-top"><span>CSS3</span><span>85%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-top"><span>JavaScript</span><span>55%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="55"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Productivity -->
       <div class="skill-group glass-card">
         <h4>Productivity</h4>
         <div class="pill-row">
@@ -2285,84 +2244,59 @@
     </div>
   </section>
 
+  <!-- ========== SERVICES ========== -->
   <section class="services wrap reveal" id="services">
     <div class="sec-head">
       <div class="sec-tag">Services</div>
-      <h2 class="sec-title">How I can help</h2>
-      <p class="sec-sub">Professional services tailored to your needs</p>
+      <h2 class="sec-title">What I do best</h2>
+      <p class="sec-sub">Graphic design is my core craft — web design is a supporting service</p>
     </div>
     <div class="service-grid">
-      <div class="service-item glass-card">
+      <!-- PRIMARY SERVICES -->
+      <div class="service-item glass-card primary-service">
         <div class="service-num">01</div>
-        <h3>Business Website Design</h3>
-        <p>Full websites built to represent your business online, clearly and professionally.</p>
+        <h3>Brand Identity Design</h3>
+        <p>Logos, brand marks, typography systems and complete visual identity kits for businesses.</p>
       </div>
-      <div class="service-item glass-card">
+      <div class="service-item glass-card primary-service">
         <div class="service-num">02</div>
-        <h3>Portfolio Websites</h3>
-        <p>Personal portfolio sites that showcase your work and skills to the right audience.</p>
+        <h3>Packaging Design</h3>
+        <p>Product packaging, boxes, labels and mockups designed to stand out on the shelf.</p>
       </div>
-      <div class="service-item glass-card">
+      <div class="service-item glass-card primary-service">
         <div class="service-num">03</div>
-        <h3>Landing Page Design</h3>
-        <p>Focused, single-page designs built to convert visitors into leads or customers.</p>
+        <h3>Ad Creatives & Posters</h3>
+        <p>Scroll-stopping ad creatives, social media posts, billboards and promo posters.</p>
       </div>
+      <!-- SECONDARY SERVICES -->
       <div class="service-item glass-card">
         <div class="service-num">04</div>
-        <h3>Responsive Development</h3>
-        <p>Sites that work smoothly across mobile, tablet, and desktop screens.</p>
+        <h3>Business Website Design</h3>
+        <p>Clean, responsive websites to give your brand a strong online presence.</p>
       </div>
       <div class="service-item glass-card">
         <div class="service-num">05</div>
-        <h3>Website Redesign</h3>
-        <p>Modernizing outdated websites with fresh layouts and improved usability.</p>
+        <h3>Landing Page Design</h3>
+        <p>Focused single-page designs built to convert visitors into leads or customers.</p>
       </div>
       <div class="service-item glass-card">
         <div class="service-num">06</div>
-        <h3>Graphic Design</h3>
-        <p>Branding, packaging, ad creatives and social posts designed to stand out.</p>
+        <h3>Photo Editing & Retouching</h3>
+        <p>Professional photo retouching, color correction and product photo editing.</p>
       </div>
     </div>
   </section>
 
+  <!-- ========== PROJECTS / WORK ========== -->
   <section class="projects wrap" id="work">
     <div class="sec-head reveal">
       <div class="sec-tag">Work</div>
       <h2 class="sec-title">Selected Projects</h2>
-      <p class="sec-sub">Web builds and graphic design campaigns — branding, packaging, and advertising work</p>
+      <p class="sec-sub">Graphic design campaigns first — branding, packaging, ad creatives — plus web builds</p>
     </div>
-    <div class="subsec-label reveal">Web Development</div>
-    <div class="web-grid" id="webGrid">
-      <div class="web-card glass-card reveal">
-        <div class="sh-id">01 / 04</div>
-        <div class="site-icon">&lt;/&gt;</div>
-        <h4>Bakery Website</h4>
-        <p>A warm, appetite-driven site for a local bakery — menu showcase, ordering info, and brand story.</p>
-        <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
-      </div>
-      <div class="web-card glass-card reveal">
-        <div class="sh-id">02 / 04</div>
-        <div class="site-icon">&lt;/&gt;</div>
-        <h4>Coaching Center Website</h4>
-        <p>A clean, trust-building site for an education coaching center, with course listings and contact flow.</p>
-        <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
-      </div>
-      <div class="web-card glass-card reveal">
-        <div class="sh-id">03 / 04</div>
-        <div class="site-icon">&lt;/&gt;</div>
-        <h4>Cafe Website</h4>
-        <p>A cozy, visual-first site for a cafe brand — menu, ambience, and location details in one clean layout.</p>
-        <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
-      </div>
-      <div class="web-card glass-card reveal">
-        <div class="sh-id">04 / 04</div>
-        <div class="site-icon">&lt;/&gt;</div>
-        <h4>Personal Portfolio Website</h4>
-        <p>A self-built portfolio to showcase design and development work — an earlier iteration of this site.</p>
-        <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
-      </div>
-    </div>
-    <div class="subsec-label reveal">Graphic Design</div>
+
+    <!-- GRAPHIC DESIGN FIRST (Primary) -->
+    <div class="subsec-label primary-label reveal">★ Graphic Design — Primary Work</div>
     <div class="filter-row reveal" id="filterRow">
       <div class="filter-btns">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -2396,7 +2330,6 @@
           <div class="g-overlay"><div class="g-cat">Ad Creative</div><h5>Nike AirForce Billboard</h5></div>
         </div>
       </div>
-      
       <div class="tilt-card reveal">
         <div class="plate" data-cat="ad" data-full="images/cheese_burger.png" data-title="Cheeseburger Promo" data-desc="Appetite-driven food ad creative for a fast-food promotion." data-tags="Ad Creative">
           <img src="images/cheese_burger.png" alt="Burger King cheeseburger ad" loading="lazy">
@@ -2532,16 +2465,52 @@
 
       <div class="no-results" id="noResults">No projects match your search. Try another keyword or filter.</div>
     </div>
+
+    <!-- WEB DEVELOPMENT SECOND (Secondary) -->
+    <div class="subsec-label reveal">Web Development — Supporting Work</div>
+    <div class="web-grid" id="webGrid">
+      <div class="web-card glass-card reveal">
+        <div class="sh-id">01 / 04</div>
+        <div class="site-icon">&lt;/&gt;</div>
+        <h4>Bakery Website</h4>
+        <p>A warm, appetite-driven site for a local bakery — menu showcase, ordering info, and brand story.</p>
+        <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
+      </div>
+      <div class="web-card glass-card reveal">
+        <div class="sh-id">02 / 04</div>
+        <div class="site-icon">&lt;/&gt;</div>
+        <h4>Coaching Center Website</h4>
+        <p>A clean, trust-building site for an education coaching center, with course listings and contact flow.</p>
+        <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
+      </div>
+      <div class="web-card glass-card reveal">
+        <div class="sh-id">03 / 04</div>
+        <div class="site-icon">&lt;/&gt;</div>
+        <h4>Cafe Website</h4>
+        <p>A cozy, visual-first site for a cafe brand — menu, ambience, and location details in one clean layout.</p>
+        <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
+      </div>
+      <div class="web-card glass-card reveal">
+        <div class="sh-id">04 / 04</div>
+        <div class="site-icon">&lt;/&gt;</div>
+        <h4>Personal Portfolio Website</h4>
+        <p>A self-built portfolio to showcase design and development work — an earlier iteration of this site.</p>
+        <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+      </div>
+    </div>
   </section>
 
+  <!-- ========== CERTIFICATES ========== -->
   <section class="certificates wrap reveal" id="certificates">
     <div class="sec-head">
       <div class="sec-tag">Certificates</div>
       <h2 class="sec-title">Verified Credentials</h2>
-      <p class="sec-sub">Certified courses completed from DISHA Computer Institute — an ISO 9001:2015 certified institute.</p>
+      <p class="sec-sub">Certified courses from DISHA Computer Institute — an ISO 9001:2015 certified institute.</p>
     </div>
     <div class="cert-grid">
-      <div class="cert-card glass-card reveal">
+
+      <!-- PRIMARY: Graphic Designing -->
+      <div class="cert-card glass-card reveal primary-cert">
         <div class="cert-badge">🎨</div>
         <h4>Certificate Course in Graphic Designing</h4>
         <div class="cert-issuer">DISHA Computer Institute</div>
@@ -2555,6 +2524,8 @@
           <span class="cert-score">98.33%</span>
         </div>
       </div>
+
+      <!-- Web Designing -->
       <div class="cert-card glass-card reveal">
         <div class="cert-badge">💻</div>
         <h4>Certificate Course in Web Designing</h4>
@@ -2569,6 +2540,8 @@
           <span class="cert-score">90.00%</span>
         </div>
       </div>
+
+      <!-- Diploma IT -->
       <div class="cert-card glass-card reveal">
         <div class="cert-badge">🎓</div>
         <h4>Diploma Course in Information Technology</h4>
@@ -2586,11 +2559,12 @@
     </div>
   </section>
 
+  <!-- ========== CONTACT ========== -->
   <section class="contact wrap reveal" id="contact">
     <div class="sec-head">
       <div class="sec-tag">Contact</div>
-      <h2 class="sec-title">Let's build something.</h2>
-      <p class="sec-sub">Have a project in mind? Reach out — I usually reply within a day.</p>
+      <h2 class="sec-title">Let's design something.</h2>
+      <p class="sec-sub">Have a brand, packaging, or website project? Reach out — I usually reply within a day.</p>
     </div>
     <div class="contact-grid">
       <div>
@@ -2624,7 +2598,7 @@
       </div>
       <div class="send-card glass-card">
         <div class="card-label">Quick Message</div>
-        <p>Send a short brief of your project — timeline, budget, and what you need built or designed.</p>
+        <p>Send a short brief of your project — timeline, budget, and what you need designed or built.</p>
         <form id="contactForm" novalidate>
           <div class="form-group" data-field="name">
             <label for="cf-name">Name</label>
@@ -2654,7 +2628,7 @@
 
 <footer class="wrap">
   <div class="foot-row">
-    <span>© 2026 Juber Ahamad — Web Designer & Graphic Designer, Mumbai</span>
+    <span>© 2026 Juber Ahamad — Graphic Designer & Web Designer, Mumbai</span>
     <div class="foot-social">
       <a href="https://www.instagram.com/zubairr.041?igsh=cnBsMHd2d3QxbHBn" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.linkedin.com/in/zubair-ahamad-7a6123402" target="_blank" rel="noopener">LinkedIn</a>
@@ -2721,8 +2695,9 @@
     }
   };
 
+  // GRAPHIC DESIGN FIRST — primary roles
   const Typewriter = {
-    roles: ['Web Designer', 'Front-End Developer', 'Graphic Designer', 'Brand Visual Creator'],
+    roles: ['Graphic Designer', 'Brand Visual Creator', 'Packaging Designer', 'Web Designer'],
     i: 0, char: 0, deleting: false,
     init(){
       this.el = document.getElementById('roleText');
@@ -2761,7 +2736,6 @@
           el.style.transform = 'none';
         });
       }
-
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
           if(e.isIntersecting){
@@ -2770,7 +2744,6 @@
           }
         });
       }, {threshold:0.12});
-
       document.querySelectorAll('.reveal').forEach(el=>{
         if(!isMobile || !el.closest('#gallery')){
           io.observe(el);
